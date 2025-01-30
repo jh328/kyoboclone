@@ -1,36 +1,31 @@
-type Button = [
-    {
-        title: "BuyCrypto",
-        link: "#",
-    },
-    {
-        title: "Markets",
-        link: "#"
-    },
-    {
-        title: "Trade",
-        link: "Trade",
-    }, {
-        title: "Futures",
-        link: "Futures",
-    }, {
-        title: "Earn",
-        link: "Earn"
-    },
-    {
-        title: "Square",
-        link: "Square",
-    },
-    {
-        title: "More",
-        link: "#"
-    }
-]
+import React, {FC} from "react";
 
-export default function Button({}: Button) {
+type ButtonProps = {
+    children: React.ReactNode,
+    onClick?: () => void;
+    variant: "primary" | "secondary" | "danger";
+    size?: "small" | "medium" | "large";
+}
+
+export const Button: FC<ButtonProps> = ({children, onClick, variant = "primary", size = "medium"}) => {
+    const baseStyle = "rounded font-bold focus:outline-none transition-all";
+    const sizeStyles = {
+        small: "text-xs px-2 py-1",
+        medium: "text-sm px-4 py-2",
+        large: "text-lg px-6 py-3",
+    }
+
+    const variantStyles = {
+        primary: "bg-yellow-500 text-black hover:bg-vellow-400",
+        secondary: "bg-gray-700 text-white hover:bg-gray-600",
+        danger: "bg-red-500 text-white hover:bg-red-400",
+    }
     return (
-        <>
-            <h1>버튼</h1>
-        </>
+        <button
+            className={`${baseStyle} ${sizeStyles[size]} ${variantStyles[variant]}`}
+            onClick={onClick}
+        >
+            {children}
+        </button>
     )
-};
+}
