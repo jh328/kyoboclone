@@ -1,11 +1,11 @@
 import Header from "@/app/components/Header";
+import Layout from "@/app/components/Layout";
 
 export default function BTCUSDT() {
     return (
         <>
             <Header/>
-
-            <h1>거래 페이지</h1>
+            <Layout/>
         </>
     )
 };

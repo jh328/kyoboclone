@@ -23,6 +23,8 @@ export default function Header() {
                 <Button variant="secondary">Log In</Button>
                 <Button variant="primary">Sign Up</Button>
             </div>
+
+
         </header>
     );
 };
