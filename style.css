@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html,
+    body {
+        @apply block font-sans text-sm leading-[19.6px] h-[968px] min-w-[1440px] m-0 p-0;
+
+    }
+
+    .div-service_mall_box {
+        @apply block
+    }
+}
